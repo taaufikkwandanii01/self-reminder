@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  animation: typing 2.5s steps(20, end), blink .75s step-end infinite;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 80% }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
