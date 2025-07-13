@@ -7,7 +7,7 @@ body {
 }
 
 .bg-default {
-  @apply bg-[url("../dist/img/bg2.jpeg")] bg-cover bg-center filter blur-xs min-h-screen fixed inset-0 -z-1
+  @apply bg-[url("../dist/img/bg2.jpeg")] bg-cover bg-center min-h-screen fixed inset-0 -z-10
 }
 
 @media (min-width: 1280px) {
