@@ -862,6 +862,8 @@ body {
   background-image: url("../dist/img/bg2.jpeg");
   background-size: cover;
   background-position: center;
+  --tw-blur: blur(4px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 @media (min-width: 1280px) {
