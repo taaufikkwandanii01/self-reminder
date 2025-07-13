@@ -6,6 +6,16 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.bg-default {
+  @apply bg-[url("../dist/img/bg2.jpeg")] bg-cover bg-center filter blur-sm min-h-screen fixed inset-0 -z-10;
+}
+
+@media (min-width: 1280px) {
+  .bg-default {
+    background-image: url("../dist/img/bg2-landscape.jpeg");
+  }
+}
+
 .typewriter {
   overflow: hidden;
   border-right: .15em solid orange;
