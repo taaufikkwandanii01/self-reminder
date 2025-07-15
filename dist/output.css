@@ -649,10 +649,6 @@ video {
   overflow: hidden;
 }
 
-.overflow-y-auto {
-  overflow-y: auto;
-}
-
 .overflow-x-hidden {
   overflow-x: hidden;
 }
@@ -753,10 +749,6 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
-}
-
-.pb-24 {
-  padding-bottom: 6rem;
 }
 
 .text-center {
