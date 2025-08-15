@@ -1,19 +1,24 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  font-family: 'Inter', sans-serif;
+  background-color: hsl(195, 40%, 8%);
+  color: white;
 }
 
-.bg-default {
-  @apply bg-[url("../dist/img/bg1-portrait.jpg")] bg-cover bg-center filter blur-sm min-h-screen fixed inset-0 -z-10
+@keyframes typing {
+  from { width: 0 }
+  to { width: 80% }
 }
 
-@media (min-width: 1280px) {
-  .bg-default {
-    background-image: url("../dist/img/bg1-landscape.jpg");
-  }
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
 }
 
 .typewriter {
@@ -25,12 +30,46 @@ body {
   margin: 0 auto;
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 80% }
+@keyframes move-horizontal {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(50px);
+  }
 }
 
-@keyframes blink {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
+.animate-move-horizontal {
+  animation: move-horizontal 6s ease-in-out infinite;
+}
+
+@keyframes move-vertical {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(50px);
+  }
+}
+
+.animate-move-vertical {
+  animation: move-vertical 6s ease-in-out infinite;
+}
+
+@keyframes move-diagonal {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(50px, 50px);
+  }
 }

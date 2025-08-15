@@ -2,290 +2,390 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Self Reminder</title>
-  <link rel="icon" type="image/svg+xml" href="dist/img/icon2.png" />
-  <link href="dist/output.css" rel="stylesheet" />
-  <!--aos (animate on scroll)-->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="dist/output.css" rel="stylesheet">
+  <link rel="icon" href="dist/img/icon2.png" type="image/png" sizes="246x166">
 </head>
 
-<body class="relative min-h-screen overflow-x-hidden">
-  <!-- Blur background -->
-  <div class="bg-default"></div>
-
-  <div class="w-full px-4 pt-10 pb-2 bg-slate-100 opacity-50">
-    <div class="max-w-xl mx-auto text-center mb-10">
-      <h2 class="typewriter text-4xl sm:text-5xl lg:text-6xl font-bold uppercase text-dark hover:text-slate-500">
-        𝕊𝔼𝕃𝔽 ℝ𝔼𝕄𝕀ℕ𝔻𝔼ℝ
-      </h2>
-    </div>
-  </div>
-
-  <!-- Konten -->
-  <div class="container">
-    <div class="relative z-10 text-center pt-5">
-      <!-- Grid utama untuk 4 card -->
-      <div
-        class="w-full px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-2 gap-4 xl:w-11/12 xl:mx-auto">
-        <!-- Card -->
-        <div data-aos="zoom-out" class="h-full">
-          <div onclick="changeColor(this)"
-            class="h-full flex flex-col justify-between rounded-xl shadow-md overflow-hidden bg-slate-100 opacity-70 hover:scale-105 transition duration-300 ease-in-out cursor-pointer p-4">
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3">Man Jadda Wajada</h3>
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3">مَنْ جَدَّ وَجَدَ</h3>
-            <p class="font-md text-base text-secondary">Barangsiapa yang bersungguh-sungguh akan berhasil.</p>
-          </div>
-        </div>
-
-        <div data-aos="zoom-out" class="h-full">
-          <div onclick="changeColor(this)"
-            class="h-full flex flex-col justify-between rounded-xl shadow-md overflow-hidden bg-slate-100 opacity-70 hover:scale-105 transition duration-300 ease-in-out cursor-pointer p-4">
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3">Man Shabara Zhafira</h3>
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3">مَنْ صَبَرَ ظَفِرَ</h3>
-            <p class="font-md text-base text-secondary">Barangsiapa yang bersabar akan beruntung.</p>
-          </div>
-        </div>
-
-        <div data-aos="zoom-out" class="h-full">
-          <div onclick="changeColor(this)"
-            class="h-full flex flex-col justify-between rounded-xl shadow-md overflow-hidden bg-slate-100 opacity-70 hover:scale-105 transition duration-300 ease-in-out cursor-pointer p-4">
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3">Kun Fayakun</h3>
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3">كُنْ فَيَكُونُ</h3>
-            <p class="font-md text-base text-secondary">Jadilah, maka terjadilah.</p>
-          </div>
-        </div>
-
-        <div data-aos="zoom-out" class="h-full">
-          <div onclick="changeColor(this)"
-            class="h-full flex flex-col justify-between rounded-xl shadow-md overflow-hidden bg-slate-100 opacity-70 hover:scale-105 transition duration-300 ease-in-out cursor-pointer p-4">
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3">Allahumma Yassir Walaa Tu'assir</h3>
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3">اَللّهُمَّ يَسِّرْ وَ لَا تُعَسِّرْ</h3>
-            <p class="font-md text-base text-secondary">Ya Allah, mudahkanlah dan janganlah Engkau persulit.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Grid untuk bagian kedua -->
-      <div class="w-full px-2 grid grid-cols-1 xl:grid-cols-1 gap-4 xl:w-11/12 xl:mx-auto mt-6">
-        <div data-aos="fade-up" class="h-full">
-          <div onclick="changeColor(this)"
-            class="h-full flex flex-col justify-between rounded-xl shadow-md overflow-hidden bg-slate-100 opacity-70 hover:scale-105 transition duration-300 ease-in-out cursor-pointer p-4">
-            <h3 class="text-secondary text-justify text-xl mt-2">
-              <span class="font-semibold text-dark">Bersabarlah, </span>tidak semua harus sekarang.
-            </h3>
-            <h3 class="text-secondary text-justify text-xl mt-2 mb-3">
-              Suatu hari nanti, aku pasti
-              <span class="font-semibold text-dark">tersenyum</span> dan berkata.
-              <span class="font-semibold text-dark">"Terima kasih Ya Allah. Ini lebih dari yang aku minta".</span>
-            </h3>
-          </div>
+<body>
+  <main class="relative">
+    <!--animation start-->
+    <div class="absolute top-[10%] left-[10%] animate-[move-vertical_8s_ease-in-out_infinite]">
+      <div class="relative w-72 h-72">
+        <div class="absolute inset-0 rounded-full bg-blue-300/30 blur-[120px] shadow-[0_0_50px_#93c5fd]"></div>
+        <div class="absolute inset-12 rounded-full bg-blue-300/40 blur-[90px] shadow-[0_0_40px_#93c5fd]"></div>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-gradient-to-bl from-[#172554] to-[#93c5fd] shadow-[0_0_40px_#93c5fd]">
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="container">
-    <div class="relative z-10 pt-5">
-      <div
-        class="w-full px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 xl:w-11/12 xl:mx-auto">
-        <div data-aos="fade-right" class="p-0">
-          <div onclick="changeColor(this)"
-            class="card group rounded-xl shadow-md overflow-hidden bg-slate-100 opacity-70 hover:scale-105 transition duration-300 ease-in-out cursor-pointer p-4">
-
-            <!-- Thumbnail YouTube with Play Icon & Overlay -->
-            <a href="https://youtu.be/XOkl2ZRM5QA?si=2N-lcNOU97LHXiQd" target="_blank" rel="noopener noreferrer"
-              class="relative block">
-              <img src="https://img.youtube.com/vi/XOkl2ZRM5QA/hqdefault.jpg" alt="YouTube Thumbnail"
-                class="w-full rounded-lg mb-4">
-              <!-- Overlay with Icon and Text -->
-              <div
-                class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50 rounded-lg pointer-events-none">
-                <div class="mb-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24"
-                    fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <span class="text-white text-lg font-semibold">Putar Video</span>
-              </div>
-            </a>
-
-            <!-- Judul -->
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3 line-clamp-2">
-              Cara Memaksa Otak untuk Melakukan Hal Berat (Bahkan Ketika Sel Tubuh Menolak)
-            </h3>
-          </div>
+    <div class="absolute top-[25%] right-[60%] animate-[move-horizontal_10s_ease-in-out_infinite]">
+      <div class="relative w-72 h-72">
+        <div class="absolute inset-0 rounded-full bg-blue-300/30 blur-[120px] shadow-[0_0_50px_#93c5fd]"></div>
+        <div class="absolute inset-12 rounded-full bg-blue-300/40 blur-[90px] shadow-[0_0_40px_#93c5fd]"></div>
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-25 h-25 rounded-full bg-gradient-to-bl from-[#172554] to-[#93c5fd] shadow-[0_0_40px_#93c5fd]">
         </div>
-
-        <div data-aos="fade-right" class="p-0">
-          <div onclick="changeColor(this)"
-            class="card group rounded-xl shadow-md overflow-hidden bg-slate-100 opacity-70 hover:scale-105 transition duration-300 ease-in-out cursor-pointer p-4">
-            <!-- Thumbnail YouTube with Play Icon & Duration -->
-            <a href="https://youtu.be/Fng4FYln58Q?si=xHWvnbBin8aKtHXM" target="_blank" rel="noopener noreferrer"
-              class="relative block group">
-              <img src="https://img.youtube.com/vi/Fng4FYln58Q/hqdefault.jpg" alt="YouTube Thumbnail"
-                class="w-full rounded-lg mb-4">
-              <!-- Overlay with Icon and Text -->
-              <div
-                class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50 rounded-lg pointer-events-none">
-
-                <!-- Play Icon -->
-                <div class="mb-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24"
-                    fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-
-                <!-- Text -->
-                <span class="text-white text-lg font-semibold">Putar Video</span>
-              </div>
-            </a>
-            <!-- Judul -->
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3 line-clamp-2">
-              Memahami Kerangka Berpikir Orang Jenius Biar Hidupmu Lebih Mudah
-            </h3>
-          </div>
-        </div>
-
-        <div data-aos="fade-right" class="p-0">
-          <div onclick="changeColor(this)"
-            class="card group rounded-xl shadow-md overflow-hidden bg-slate-100 opacity-70 hover:scale-105 transition duration-300 ease-in-out cursor-pointer p-4">
-            <!-- Thumbnail YouTube with Play Icon & Duration -->
-            <a href="https://youtu.be/SdnlC242E6s?si=s9MBZCnQVu4mE9We" target="_blank" rel="noopener noreferrer"
-              class="relative block group">
-              <img src="https://img.youtube.com/vi/SdnlC242E6s/hqdefault.jpg" alt="YouTube Thumbnail"
-                class="w-full rounded-lg mb-4">
-              <!-- Overlay with Icon and Text -->
-              <div
-                class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50 rounded-lg pointer-events-none">
-
-                <!-- Play Icon -->
-                <div class="mb-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24"
-                    fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-
-                <!-- Text -->
-                <span class="text-white text-lg font-semibold">Putar Video</span>
-              </div>
-            </a>
-            <!-- Judul -->
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3 line-clamp-2">
-              Cara Menjadi Lebih Pintar dan Anti Brainrot
-            </h3>
-          </div>
-        </div>
-
-        <div data-aos="fade-right" class="p-0">
-          <div onclick="changeColor(this)"
-            class="card group rounded-xl shadow-md overflow-hidden bg-slate-100 opacity-70 hover:scale-105 transition duration-300 ease-in-out cursor-pointer p-4">
-            <!-- Thumbnail YouTube with Play Icon & Duration -->
-            <a href="https://youtu.be/yD6dfHYgJm4?si=myUesXdGVVjlj9ez" target="_blank" rel="noopener noreferrer"
-              class="relative block group">
-              <img src="https://img.youtube.com/vi/yD6dfHYgJm4/hqdefault.jpg" alt="YouTube Thumbnail"
-                class="w-full rounded-lg mb-4">
-              <!-- Overlay with Icon and Text -->
-              <div
-                class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50 rounded-lg pointer-events-none">
-
-                <!-- Play Icon -->
-                <div class="mb-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24"
-                    fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-
-                <!-- Text -->
-                <span class="text-white text-lg font-semibold">Putar Video</span>
-              </div>
-            </a>
-            <!-- Judul -->
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3 line-clamp-2">
-              Cara Belajar Lebih Benar dan Mengingat Lebih Lama
-            </h3>
-          </div>
-        </div>
-
-        <div data-aos="fade-right" class="p-0">
-          <div onclick="changeColor(this)"
-            class="card group rounded-xl shadow-md overflow-hidden bg-slate-100 opacity-70 hover:scale-105 transition duration-300 ease-in-out cursor-pointer p-4">
-            <!-- Thumbnail YouTube with Play Icon & Duration -->
-            <a href="https://youtu.be/5vricdLbarE?si=_CAew7z-bWgyMQbk" target="_blank" rel="noopener noreferrer"
-              class="relative block group">
-              <img src="https://img.youtube.com/vi/5vricdLbarE/hqdefault.jpg" alt="YouTube Thumbnail"
-                class="w-full rounded-lg mb-4">
-              <!-- Overlay with Icon and Text -->
-              <div
-                class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50 rounded-lg pointer-events-none">
-
-                <!-- Play Icon -->
-                <div class="mb-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24"
-                    fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-
-                <!-- Text -->
-                <span class="text-white text-lg font-semibold">Putar Video</span>
-              </div>
-            </a>
-            <!-- Judul -->
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3 line-clamp-2">
-              Cara Tetap Produktif Sepanjang Tahun (Bahkan Ketika Tubuh Pengen Rebahan)
-            </h3>
-          </div>
-        </div>
-
-        <div data-aos="fade-right" class="p-0">
-          <div onclick="changeColor(this)"
-            class="card group rounded-xl shadow-md overflow-hidden bg-slate-100 opacity-70 hover:scale-105 transition duration-300 ease-in-out cursor-pointer p-4">
-            <!-- Thumbnail YouTube with Play Icon & Duration -->
-            <a href="https://youtu.be/H-DeO-hnyTc?si=STiLNcdHwPnI5fOT" target="_blank" rel="noopener noreferrer"
-              class="relative block group">
-              <img src="https://img.youtube.com/vi/H-DeO-hnyTc/hqdefault.jpg" alt="YouTube Thumbnail"
-                class="w-full rounded-lg mb-4">
-              <!-- Overlay with Icon and Text -->
-              <div
-                class="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out bg-black bg-opacity-50 rounded-lg pointer-events-none">
-
-                <!-- Play Icon -->
-                <div class="mb-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24"
-                    fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-
-                <!-- Text -->
-                <span class="text-white text-lg font-semibold">Putar Video</span>
-              </div>
-            </a>
-            <!-- Judul -->
-            <h3 class="font-semibold text-dark text-xl mt-2 mb-3 line-clamp-2">
-              Cara Meningkatkan IQ dan Kecerdasan Otak
-            </h3>
-          </div>
-        </div>
-
       </div>
     </div>
-  </div>
+    <!--animation end-->
 
-  <!--footer-->
-  <footer class="pt-24 pb-5">
-    <div class="container">
-      <div class="w-full pt-10 border-x border-t border-slate-300">
-        <div class="flex items-center justify-center mb-5">
+    <!--active section start-->
+    <div id="nav-menu" class="hidden fixed lg:flex flex-col top-1/2 right-5 gap-5">
+      <a href="#self_reminder">
+        <div class="relative group flex items-center">
+          <!-- Diamond -->
+          <div
+            class="w-4 h-4 bg-blue-300 [clip-path:polygon(50%_0%,_100%_50%,_50%_100%,_0%_50%)] transition-all duration-300">
+          </div>
+          <!-- Tooltip -->
+          <span
+            class="absolute right-full top-1/2 -translate-y-1/2 mr-4 px-2 py-1 bg-blue-600 font-mono text-white font-bold text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap capitalize">
+            Self Reminder
+          </span>
+        </div>
+      </a>
+
+      <a href="#video_reference">
+        <div class="relative group flex items-center">
+          <!-- Diamond -->
+          <div
+            class="w-4 h-4 bg-blue-300 [clip-path:polygon(50%_0%,_100%_50%,_50%_100%,_0%_50%)] transition-all duration-300">
+          </div>
+          <!-- Tooltip -->
+          <span
+            class="absolute right-full top-1/2 -translate-y-1/2 mr-4 px-2 py-1 bg-blue-600 font-mono text-white font-bold text-sm rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap capitalize">
+            Video Reference
+          </span>
+        </div>
+      </a>
+    </div>
+    <!--active section end-->
+
+    <!--header start-->
+    <header class="w-full fixed top-0 left-0 z-100 px-3 md:px-10 bg-transparent backdrop-blur-md shadow-lg">
+      <div class="w-full flex items-center justify-center h-25">
+        <div class="flex items-center">
+          <h2 class="font-mono text-4xl md:text-6xl font-bold uppercase typewriter">Self Reminder</h2>
+        </div>
+      </div>
+    </header>
+    <!--header end-->
+
+    <!--content 1 start-->
+    <section id="self_reminder" class="w-full min-h-screen flex flex-wrap justify-center z-10 pt-30 px-5 md:px-8">
+      <div class="container">
+        <div class="w-full max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-5 gap-5">
+            <div class="w-full rounded-xl border-1 backdrop-blur-lg hover:scale-95 transition duration-300">
+              <div class="flex flex-col my-5 mx-3 gap-4">
+                <h3 class="font-mono text-xl font-bold text-center">Man Jadda Wajada</h3>
+                <p class="text-xl text-right">مَنْ جَدَّ وَجَدَ</p>
+                <p class="font-mono text-lg text-left">Barangsiapa yang bersungguh-sungguh akan berhasil.</p>
+              </div>
+            </div>
+
+            <div class="w-full rounded-xl border-1 backdrop-blur-lg hover:scale-95 transition duration-300">
+              <div class="flex flex-col my-5 mx-3 gap-4">
+                <h3 class="font-mono text-xl font-bold text-center">Man Shabara Zhafira</h3>
+                <p class="text-xl text-right">مَنْ صَبَرَ ظَفِرَ</p>
+                <p class="font-mono text-lg text-left">Barangsiapa yang bersabar akan beruntung.</p>
+              </div>
+            </div>
+
+            <div class="w-full rounded-xl border-1 backdrop-blur-lg hover:scale-95 transition duration-300">
+              <div class="flex flex-col my-5 mx-3 gap-4">
+                <h3 class="font-mono text-xl font-bold text-center">Kun Fayakun</h3>
+                <p class="text-xl text-right">كُنْ فَيَكُونُ</p>
+                <p class="font-mono text-lg text-left">Jadilah, maka terjadilah.</p>
+              </div>
+            </div>
+
+            <div class="w-full rounded-xl border-1 backdrop-blur-lg hover:scale-95 transition duration-300">
+              <div class="flex flex-col my-5 mx-3 gap-4">
+                <h3 class="font-mono text-xl font-bold text-center">Allahumma Yassir Walaa Tu'assir</h3>
+                <p class="text-xl text-right">اَللّهُمَّ يَسِّرْ وَ لَا تُعَسِّرْ</p>
+                <p class="font-mono text-lg text-left">Ya Allah, mudahkanlah dan janganlah Engkau persulit.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 pb-5 gap-5">
+            <div class="w-full rounded-xl border-1 backdrop-blur-lg hover:scale-95 transition duration-300">
+              <div class="flex flex-col my-5 mx-3 gap-4">
+                <h3 class="font-mono text-xl font-bold text-center">Bersabarlah, tidak semua harus sekarang. Suatu hari
+                  nanti, aku pasti tersenyum dan berkata. "Terima kasih Ya Allah. Ini lebih dari yang aku minta".</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--content 1 end-->
+
+    <div class="flex justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="rotate-90 animate-move-horizontal" aria-hidden="true">
+        <path d="M12 12h.01"></path>
+        <path d="M16 12h.01"></path>
+        <path d="m17 7 5 5-5 5"></path>
+        <path d="m7 7-5 5 5 5"></path>
+        <path d="M8 12h.01"></path>
+      </svg>
+    </div>
+
+    <!--content 2 start-->
+    <section id="video_reference" class="w-full flex flex-wrap justify-center z-10 pt-30 px-5 md:px-8">
+      <div class="container">
+        <div class="w-full max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+
+            <div class="group border-1 rounded-xl shadow-md bg-blue-300/10 backdrop-blur-lg cursor-pointer">
+              <div class="flex flex-col">
+                <!-- Link YouTube -->
+                <a href="https://youtu.be/XOkl2ZRM5QA?si=2N-lcNOU97LHXiQd" target="_blank" rel="noopener noreferrer"
+                  class="block">
+
+                  <!-- Thumbnail wrapper -->
+                  <div class="relative">
+                    <!-- Thumbnail -->
+                    <img src="https://img.youtube.com/vi/XOkl2ZRM5QA/hqdefault.jpg" alt="YouTube Thumbnail"
+                      class="w-full rounded-xl">
+
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center 
+                    opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out 
+                    bg-black bg-opacity-50 rounded-xl pointer-events-none">
+
+                      <!-- Play Icon -->
+                      <div class="mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24"
+                          fill="currentColor">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+
+                      <!-- Text -->
+                      <span class="font-mono text-lg font-semibold">Putar Video</span>
+                    </div>
+                  </div>
+
+                  <!-- Judul -->
+                  <h3 class="font-mono text-xl font-semibold text-center my-3 mx-1">
+                    Cara Memaksa Otak untuk Melakukan Hal Berat (Bahkan Ketika Sel Tubuh Menolak)
+                  </h3>
+                </a>
+              </div>
+            </div>
+
+            <div class="group border-1 rounded-xl shadow-md bg-blue-300/10 backdrop-blur-lg cursor-pointer">
+              <div class="flex flex-col">
+                <!-- Link YouTube -->
+                <a href="https://youtu.be/Fng4FYln58Q?si=xHWvnbBin8aKtHXM" target="_blank" rel="noopener noreferrer"
+                  class="block">
+
+                  <!-- Thumbnail wrapper -->
+                  <div class="relative">
+                    <!-- Thumbnail -->
+                    <img src="https://img.youtube.com/vi/Fng4FYln58Q/hqdefault.jpg" alt="YouTube Thumbnail"
+                      class="w-full rounded-xl">
+
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center 
+                    opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out 
+                    bg-black bg-opacity-50 rounded-xl pointer-events-none">
+
+                      <!-- Play Icon -->
+                      <div class="mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24"
+                          fill="currentColor">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+
+                      <!-- Text -->
+                      <span class="font-mono text-lg font-semibold">Putar Video</span>
+                    </div>
+                  </div>
+
+                  <!-- Judul -->
+                  <h3 class="font-mono text-xl font-semibold text-center my-3 mx-1">
+                    Memahami Kerangka Berpikir Orang Jenius Biar Hidupmu Lebih Mudah
+                  </h3>
+                </a>
+              </div>
+            </div>
+
+            <div class="group border-1 rounded-xl shadow-md bg-blue-300/10 backdrop-blur-lg cursor-pointer">
+              <div class="flex flex-col">
+                <!-- Link YouTube -->
+                <a href="https://youtu.be/SdnlC242E6s?si=s9MBZCnQVu4mE9We" target="_blank" rel="noopener noreferrer"
+                  class="block">
+
+                  <!-- Thumbnail wrapper -->
+                  <div class="relative">
+                    <!-- Thumbnail -->
+                    <img src="https://img.youtube.com/vi/SdnlC242E6s/hqdefault.jpg" alt="YouTube Thumbnail"
+                      class="w-full rounded-xl">
+
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center 
+                    opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out 
+                    bg-black bg-opacity-50 rounded-xl pointer-events-none">
+
+                      <!-- Play Icon -->
+                      <div class="mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24"
+                          fill="currentColor">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+
+                      <!-- Text -->
+                      <span class="font-mono text-lg font-semibold">Putar Video</span>
+                    </div>
+                  </div>
+
+                  <!-- Judul -->
+                  <h3 class="font-mono text-xl font-semibold text-center my-3 mx-1">
+                    Cara Menjadi Lebih Pintar dan Anti Brainrot
+                  </h3>
+                </a>
+              </div>
+            </div>
+
+
+            <div class="group border-1 rounded-xl shadow-md bg-blue-300/10 backdrop-blur-lg cursor-pointer">
+              <div class="flex flex-col">
+                <!-- Link YouTube -->
+                <a href="https://youtu.be/yD6dfHYgJm4?si=myUesXdGVVjlj9ez" target="_blank" rel="noopener noreferrer"
+                  class="block">
+
+                  <!-- Thumbnail wrapper -->
+                  <div class="relative">
+                    <!-- Thumbnail -->
+                    <img src="https://img.youtube.com/vi/yD6dfHYgJm4/hqdefault.jpg" alt="YouTube Thumbnail"
+                      class="w-full rounded-xl">
+
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center 
+                    opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out 
+                    bg-black bg-opacity-50 rounded-xl pointer-events-none">
+
+                      <!-- Play Icon -->
+                      <div class="mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24"
+                          fill="currentColor">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+
+                      <!-- Text -->
+                      <span class="font-mono text-lg font-semibold">Putar Video</span>
+                    </div>
+                  </div>
+
+                  <!-- Judul -->
+                  <h3 class="font-mono text-xl font-semibold text-center my-3 mx-1">
+                    Cara Belajar Lebih Benar dan Mengingat Lebih Lama
+                  </h3>
+                </a>
+              </div>
+            </div>
+
+            <div class="group border-1 rounded-xl shadow-md bg-blue-300/10 backdrop-blur-lg cursor-pointer">
+              <div class="flex flex-col">
+                <!-- Link YouTube -->
+                <a href="https://youtu.be/5vricdLbarE?si=_CAew7z-bWgyMQbk" target="_blank" rel="noopener noreferrer"
+                  class="block">
+
+                  <!-- Thumbnail wrapper -->
+                  <div class="relative">
+                    <!-- Thumbnail -->
+                    <img src="https://img.youtube.com/vi/5vricdLbarE/hqdefault.jpg" alt="YouTube Thumbnail"
+                      class="w-full rounded-xl">
+
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center 
+                    opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out 
+                    bg-black bg-opacity-50 rounded-xl pointer-events-none">
+
+                      <!-- Play Icon -->
+                      <div class="mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24"
+                          fill="currentColor">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+
+                      <!-- Text -->
+                      <span class="font-mono text-lg font-semibold">Putar Video</span>
+                    </div>
+                  </div>
+
+                  <!-- Judul -->
+                  <h3 class="font-mono text-xl font-semibold text-center my-3 mx-1">
+                    Cara Tetap Produktif Sepanjang Tahun (Bahkan Ketika Tubuh Pengen Rebahan)
+                  </h3>
+                </a>
+              </div>
+            </div>
+
+            <div class="group border-1 rounded-xl shadow-md bg-blue-300/10 backdrop-blur-lg cursor-pointer">
+              <div class="flex flex-col">
+                <!-- Link YouTube -->
+                <a href="https://youtu.be/H-DeO-hnyTc?si=STiLNcdHwPnI5fOT" target="_blank" rel="noopener noreferrer"
+                  class="block">
+
+                  <!-- Thumbnail wrapper -->
+                  <div class="relative">
+                    <!-- Thumbnail -->
+                    <img src="https://img.youtube.com/vi/H-DeO-hnyTc/hqdefault.jpg" alt="YouTube Thumbnail"
+                      class="w-full rounded-xl">
+
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 flex flex-col items-center justify-center 
+                    opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out 
+                    bg-black bg-opacity-50 rounded-xl pointer-events-none">
+
+                      <!-- Play Icon -->
+                      <div class="mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" viewBox="0 0 24 24"
+                          fill="currentColor">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+
+                      <!-- Text -->
+                      <span class="font-mono text-lg font-semibold">Putar Video</span>
+                    </div>
+                  </div>
+
+                  <!-- Judul -->
+                  <h3 class="font-mono text-xl font-semibold text-center my-3 mx-1">
+                    Cara Meningkatkan IQ dan Kecerdasan Otak
+                  </h3>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--content 2 end-->
+
+    <!--footer-->
+    <footer class="pt-10 px-5 md:px-8">
+      <div class="w-full flex flex-col justify-center border-x border-t border-slate-700 pt-5 pb-5">
+        <div class="flex justify-center mb-5 gap-3">
           <!--linkedin-->
           <a href="https://www.linkedin.com/in/taufikwandani/" target="_blank"
-            class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300">
+            class="w-9 h-9 rounded-full flex justify-center items-center border border-white cursor-pointer transition duration-100 hover:shadow-[0_0_50px_#93c5fd]">
             <svg role="img" width="19" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <title>Linkedin</title>
               <path
@@ -293,67 +393,37 @@
             </svg>
           </a>
 
-          <!--instagram-->
-          <a href="https://www.instagram.com/taufikwandanii/" target="_blank"
-            class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300">
-            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <title>Instagram</title>
-              <path
-                d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
-            </svg>
-          </a>
-
           <!--github-->
           <a href="https://github.com/taaufikkwandanii01/" target="_blank"
-            class="w-9 h-9 mr-0 rounded-full flex justify-center items-center border border-slate-300 hover:border-primary hover:bg-primary hover:text-white text-slate-300">
+            class="w-9 h-9 rounded-full flex justify-center items-center border border-white cursor-pointer transition duration-100 hover:shadow-[0_0_50px_#93c5fd]">
             <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <title>GitHub</title>
               <path
                 d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
             </svg>
           </a>
-        </div>
-        <p class="font-md font-semibold text-xs text-slate-300 text-center">
-          &copy; 2025
-          <a href="https://taaufikkwandanii01-sf.vercel.app/" class="font-bold text-primary hover:text-slate-300">
-            Taufik Wandani
+
+          <!--instagram-->
+          <a href="https://www.instagram.com/taufikwandanii/" target="_blank"
+            class="w-9 h-9 rounded-full flex justify-center items-center border border-white cursor-pointer transition duration-100 hover:shadow-[0_0_50px_#93c5fd]">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Instagram</title>
+              <path
+                d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+            </svg>
           </a>
-        </p>
+        </div>
+        <div class="flex justify-center">
+          <a href="#self_reminder" class="font-mono text-sm font-semibold text-slate-300 text-center">
+            &copy; 2025 Taufik Wandani
+          </a>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    const colors = [
-      "bg-red-300",
-      "bg-green-300",
-      "bg-blue-300",
-      "bg-yellow-300",
-      "bg-pink-300",
-      "bg-purple-300",
-      "bg-slate-100",
-    ];
+    <script src="dist/js/script.js"></script>
 
-    function changeColor(element) {
-      // Hapus semua warna lama
-      colors.forEach((color) => element.classList.remove(color));
-
-      // Pilih warna acak
-      const randomColor = colors[Math.floor(Math.random() * colors.length)];
-
-      // Tambahkan warna baru
-      element.classList.add(randomColor);
-    }
-  </script>
-
-  <!--aos (animate on scroll)-->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000, // durasi animasi (ms)
-      once: true, // hanya animasi sekali saat scroll
-    });
-  </script>
+  </main>
 </body>
 
 </html>
